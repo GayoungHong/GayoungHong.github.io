@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+st.title("Joy Hong의 첫 그래프 배포 시발")
 
 #creating a sample array
 
