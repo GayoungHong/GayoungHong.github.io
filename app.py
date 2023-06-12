@@ -8,5 +8,4 @@ import numpy as np
 
 st.title("경기과기대 202021061 홍가영")
 
-st.heeader("폐루프 전달함수")
 
