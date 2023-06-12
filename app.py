@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 
 from scipy import signal
 
+import control
+
 import streamlit as st
 
 # 메인 제목
