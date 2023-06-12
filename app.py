@@ -18,7 +18,7 @@ def main():
     
     # 전달함수 계수
     num = [100]
-    den = [1, 5, 6, 200]
+    den = [1, 5, 106]
 
     # 시스템 응답
     t, y = signal.step(signal.TransferFunction(num, den))
