@@ -18,7 +18,7 @@ def main():
     
     # 전달함수 계수
     num = [100]
-    den = [1, 5, 106]
+    den = [1, 5, 6, 100]
 
     # 시스템 응답
     t, y = signal.step(signal.TransferFunction(num, den))
@@ -52,4 +52,4 @@ def main():
     st.pyplot(fig3)
 
 if __name__ == '__main__':
-    main()
+    main()git 
