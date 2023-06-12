@@ -52,4 +52,4 @@ def main():
     st.pyplot(fig3)
 
 if __name__ == '__main__':
-    main()git 
+    main()
