@@ -6,22 +6,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-st.title("Joy Hong의 첫 그래프 배포 시발")
+st.title("경기과기대 202021061 홍가영")
 
-#creating a sample array
+st.heeader("폐루프 전달함수")
 
-a = np.random.normal(1, 1, size=50)
-
-
-
-#specifying the figure to plot 
-
-fig, x = plt.subplots()
-
-x.hist(a, bins=10)
-
-
-
-#plotting the figure
-
-st.pyplot(fig)
+st.subheader("G(s) = 100 / (s+2)(s+3)")
