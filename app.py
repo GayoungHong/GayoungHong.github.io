@@ -1,11 +1,11 @@
 # app.py
-import streamlit as st
+import numpy as np
 
 import matplotlib.pyplot as plt
 
-import numpy as np
-
 from scipy import signal
+
+import streamlit as st
 
 # 메인 제목
 st.title("경기과기대 202021061 홍가영")
@@ -13,6 +13,8 @@ st.title("경기과기대 202021061 홍가영")
 # 페이지 제목
 st.subheader("폐루프 전달함수")
 
+def main():
+    
 # 전달함수 계수
 num = [100]
 den = [1, 5, 6, 100]
