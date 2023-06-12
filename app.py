@@ -14,34 +14,42 @@ st.title("경기과기대 202021061 홍가영")
 st.subheader("폐루프 전달함수")
 
 def main():
+    st.title('Step and Bode Plot')
     
     # 전달함수 계수
     num = [100]
     den = [1, 5, 6, 100]
 
-    # 폐루프 전달함수 계산
-    closed_loop_tf = signal.TransferFunction(num, den) / (1 + signal.TransferFunction(num, den))
+    # 시스템 응답
+    t, y = signal.step(signal.TransferFunction(num, den))
 
-    # 전달함수 출력
-    st.markdown("Closed-Loop Transfer Function:")
-    st.latex("T(s) = \\frac{{100}}{{(s+2)(s+3) + 100}}")
+    # 응답곡선 그리기
+    fig1 = plt.figure()
+    plt.plot(t, y)
+    plt.xlabel('Time')
+    plt.ylabel('Output')
+    plt.title('Step Response')
+    plt.grid(True)
+    st.pyplot(fig1)
+    
+    # 주파수 응답
+    w, mag, phase = signal.bode(signal.TransferFunction(num, den))
 
     # Bode plot 그리기
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
-
-    # 게인 그래프
-    w, mag, phase = signal.bode(closed_loop_tf)
-    ax1.semilogx(w, mag)
-    ax1.set_ylabel('Gain (dB)')
-    ax1.grid(True)
-
-    # 위상 그래프
-    ax2.semilogx(w, phase)
-    ax2.set_xlabel('Frequency (rad/s)')
-    ax2.set_ylabel('Phase (degrees)')
-    ax2.grid(True)
-
-    st.pyplot(fig)
+    fig2 = plt.figure()
+    plt.semilogx(w, mag)
+    plt.ylabel('Gain (dB)')
+    plt.title('Bode Plot (Gain)')
+    plt.grid(True)
+    st.pyplot(fig2)
+    
+    fig3 = plt.figure()
+    plt.semilogx(w, phase)
+    plt.xlabel('Frequency (rad/s)')
+    plt.ylabel('Phase (degrees)')
+    plt.title('Bode Plot (Phase)')
+    plt.grid(True)
+    st.pyplot(fig3)
 
 if __name__ == '__main__':
     main()
